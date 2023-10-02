@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=dbInterviewManagement</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">12345678</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+
+        <!-- 'show_sql' set true to check sql statements on console else set to false -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- use 'create' to Create tables on application startup else use 'update'-->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!-- JDBC connection pool -->
+        <property name="connection.pool_size">5</property>
+        <property name="current_session_context_class">thread</property>
+        <mapping class="fa.training.entities.Candidate"></mapping>
+        <mapping class="fa.training.entities.EntryTest"></mapping>
+        <mapping class="fa.training.entities.Interview"></mapping>
+        <!-- Domain Model classes to be mapped -->
+
+
+    </session-factory>
+</hibernate-configuration>
